@@ -35,18 +35,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         body: Container(
-           decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6),
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              Color(0xff00796b),
-                              Color(0xff009688),
-                              Color(0xff26a69a),
-                            ],
-                          ),
-                        ),
             child: Center(
                 child:
                     Column(mainAxisSize: MainAxisSize.min,children: <Widget>[
