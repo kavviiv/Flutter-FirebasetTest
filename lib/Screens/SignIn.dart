@@ -41,18 +41,7 @@ class _LoginPageState extends State<LoginPage>{
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
-          decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6),
-                          gradient: LinearGradient(
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                            colors: [
-                              Color(0xff00796b),
-                              Color(0xff009688),
-                              Color(0xff26a69a),
-                            ],
-                          ),
-                        ),
+          
           padding: EdgeInsets.only(left: 16,right: 16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -147,18 +136,7 @@ class _LoginPageState extends State<LoginPage>{
                       },
                       padding: EdgeInsets.all(0),
                       child: Ink(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6),
-                          gradient: LinearGradient(
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                            colors: [
-                              Color(0xff0277bd),
-                              Color(0xff0288d1),
-                              Color(0xff039be5),
-                            ],
-                          ),
-                        ),
+                      
                         child: Container(
                           alignment: Alignment.center,
                           constraints: BoxConstraints(maxWidth: double.infinity,minHeight: 50),
