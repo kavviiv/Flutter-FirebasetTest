@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Color(0xff00796b) ,
           title: Text("My Firebase App", style: TextStyle(color: Colors.white)),
           actions: <Widget>[
             IconButton(
@@ -34,11 +35,23 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         body: Container(
+           decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Color(0xff00796b),
+                              Color(0xff009688),
+                              Color(0xff26a69a),
+                            ],
+                          ),
+                        ),
             child: Center(
                 child:
                     Column(mainAxisSize: MainAxisSize.min,children: <Widget>[
-          Text("Hello", style: TextStyle(fontSize: 26)),
-          Text(widget.user.email, style: TextStyle(fontSize: 16)),
+          Text("60022628", style: TextStyle(fontSize: 30, color: Colors.white)),
+          Text(widget.user.email, style: TextStyle(fontSize: 20,color: Colors.white)),
         ]))));
   }
   

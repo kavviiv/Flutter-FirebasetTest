@@ -26,6 +26,18 @@ class _SignUpState extends State<SignUp>{
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
+          decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          gradient: LinearGradient(
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                            colors: [
+                              Color(0xff00796b),
+                              Color(0xff009688),
+                              Color(0xff26a69a),
+                            ],
+                          ),
+                        ),
           padding: EdgeInsets.only(left: 16,right: 16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,62 +47,73 @@ class _SignUpState extends State<SignUp>{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   SizedBox(height: 50,),
-                  Text("Create Account,",style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold),),
+                  Text("สร้างบัญชีผู้ใช้ใหม่",style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold, color: Colors.white),),
                   SizedBox(height: 6,),
-                  Text("Sign up to get started!",style: TextStyle(fontSize: 20,color: Colors.grey.shade400),),
+                  Text("โดยการใช้อีเมลล์ของคุณ",style: TextStyle(fontSize: 20,color: Colors.white),),
                 ],
               ),
               Column(
                 children: <Widget>[
-                  TextField(
-                    controller: emailController,
-                    decoration: InputDecoration(
-                      labelText: "อีเมลล์",
-                      labelStyle: TextStyle(fontSize: 14,color: Colors.grey.shade400,fontWeight: FontWeight.w600),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey.shade300),
+                  Container(
+                    color:  Color(0xFFFFFFFf),
+                    child: TextField(
+                      controller: emailController,
+                      decoration: InputDecoration(
+                        labelText: "อีเมลล์",
+                        labelStyle: TextStyle(fontSize: 20,color: Colors.grey.shade400,fontWeight: FontWeight.w600),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.grey.shade300),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.red),
+                        ),
+                        floatingLabelBehavior: FloatingLabelBehavior.auto,
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.red),
-                      ),
-                      floatingLabelBehavior: FloatingLabelBehavior.auto,
                     ),
                   ),
                   SizedBox(height: 16,),
-                  TextField(
-                    controller: passwordController,
-                    decoration: InputDecoration(
-                      labelText: "รหัสผ่าน",
-                      labelStyle: TextStyle(fontSize: 14,color: Colors.grey.shade400,fontWeight: FontWeight.w600),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey.shade300),
+                  Container(
+              color:  Color(0xFFFFFFFf),
+
+                    child: TextField(
+                      controller: passwordController,
+                      decoration: InputDecoration(
+                        labelText: "รหัสผ่าน",
+                        labelStyle: TextStyle(fontSize: 20,color: Colors.grey.shade400,fontWeight: FontWeight.w600),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.grey.shade300),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.red),
+                        ),
+                        floatingLabelBehavior: FloatingLabelBehavior.auto,
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.red),
-                      ),
-                      floatingLabelBehavior: FloatingLabelBehavior.auto,
                     ),
                   ),
                   SizedBox(height: 16,),
-                  TextField(
-                    controller: confirmController,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: "กรอกรหัสผ่านอีกครั้ง",
-                      labelStyle: TextStyle(fontSize: 14,color: Colors.grey.shade400,fontWeight: FontWeight.w600),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.grey.shade300),
+                  Container(
+                  color:  Color(0xFFFFFFFf),
+
+                    child: TextField(
+                      controller: confirmController,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        labelText: "กรอกรหัสผ่านอีกครั้ง",
+                        labelStyle: TextStyle(fontSize: 20,color: Colors.grey.shade400,fontWeight: FontWeight.w600),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.grey.shade300),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.red),
+                        ),
+                        floatingLabelBehavior: FloatingLabelBehavior.auto,
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.red),
-                      ),
-                      floatingLabelBehavior: FloatingLabelBehavior.auto,
                     ),
                   ),
                   SizedBox(height: 30,),
@@ -110,9 +133,9 @@ class _SignUpState extends State<SignUp>{
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight,
                             colors: [
-                              Color(0xffff5f6d),
-                              Color(0xffff5f6d),
-                              Color(0xffffc371),
+                              Color(0xff1de9b6),
+                              Color(0xff1de9b6),
+                              Color(0xffa7ffeb),
                             ],
                           ),
                           borderRadius: BorderRadius.circular(6),
@@ -131,16 +154,16 @@ class _SignUpState extends State<SignUp>{
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 10),
+                padding: const EdgeInsets.only(bottom: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text("เป็นสมาชิกอยู่แล้ว?",style: TextStyle(fontWeight: FontWeight.bold),),
+                    Text("เป็นสมาชิกอยู่แล้ว?",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
                     GestureDetector(
                       onTap: (){
                         Navigator.pop(context);
                       },
-                      child: Text("เข้าสู่ระบบ",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red),),
+                      child: Text("เข้าสู่ระบบ",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),),
                     )
                   ],
                 ),

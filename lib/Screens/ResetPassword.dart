@@ -40,7 +40,20 @@ class _ResetPageState extends State<ResetPage>{
       key: scaffoldKey,
       backgroundColor: Colors.white,
       body: SafeArea(
+        
         child: Container(
+          decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          gradient: LinearGradient(
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                            colors: [
+                              Color(0xff00796b),
+                              Color(0xff009688),
+                              Color(0xff26a69a),
+                            ],
+                          ),
+                        ),
           padding: EdgeInsets.only(left: 16,right: 16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,27 +65,30 @@ class _ResetPageState extends State<ResetPage>{
                   SizedBox(height: 50,),
                   Text("ลืมรหัสผ่าน?",style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold),),
                   SizedBox(height: 6,),
-                  Text("กรุณากรอกอีเมลล์สำหรับการตั้งรหัสผ่านใหม่",style: TextStyle(fontSize: 20,color: Colors.grey.shade400),),
+                  Text("กรุณากรอกอีเมลล์สำหรับการตั้งรหัสผ่านใหม่",style: TextStyle(fontSize: 20,color: Colors.white),),
                 ],
               ),
               Column(
                 children: <Widget>[
-                  TextField(
-                    controller: emailController,
-                    decoration: InputDecoration(
-                      labelText: "อีเมลล์ของคุณ",
-                      labelStyle: TextStyle(fontSize: 14,color: Colors.grey.shade400),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(
-                          color: Colors.grey.shade300,
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
+                  Container(
+                    color: Color(0xFFFFFFFf),
+                    child: TextField(
+                      controller: emailController,
+                      decoration: InputDecoration(
+                        labelText: "อีเมลล์ของคุณ",
+                        labelStyle: TextStyle(fontSize: 20,color: Colors.black),
+                        enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(
-                            color: Colors.red,
-                          )
+                            color: Colors.grey.shade300,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(
+                              color: Colors.red,
+                            )
+                        ),
                       ),
                     ),
                   ),
