@@ -26,18 +26,7 @@ class _SignUpState extends State<SignUp>{
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
-          decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6),
-                          gradient: LinearGradient(
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                            colors: [
-                              Color(0xff00796b),
-                              Color(0xff009688),
-                              Color(0xff26a69a),
-                            ],
-                          ),
-                        ),
+          
           padding: EdgeInsets.only(left: 16,right: 16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -128,18 +117,7 @@ class _SignUpState extends State<SignUp>{
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: Ink(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                            colors: [
-                              Color(0xff1de9b6),
-                              Color(0xff1de9b6),
-                              Color(0xffa7ffeb),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(6),
-                        ),
+                      
                         child: Container(
                           alignment: Alignment.center,
                           constraints: BoxConstraints(minHeight: 50,maxWidth: double.infinity),
