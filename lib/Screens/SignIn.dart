@@ -42,6 +42,18 @@ class _LoginPageState extends State<LoginPage>{
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(6),
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [
+                 Color(0xff00796b),
+                Color(0xff00897b),
+                Color(0xff009688),
+              ],
+            ),
+          ),
           
           padding: EdgeInsets.only(left: 16,right: 16),
           child: Column(

@@ -4,16 +4,14 @@ import 'package:flutter/material.dart';
 
 import 'HomePage.dart';
 
-
-
 class SignUp extends StatefulWidget {
   SignUp({Key key}) : super(key: key);
- 
+
   @override
   _SignUpState createState() => _SignUpState();
 }
 
-class _SignUpState extends State<SignUp>{
+class _SignUpState extends State<SignUp> {
   FirebaseAuth _auth = FirebaseAuth.instance;
 
   TextEditingController emailController = TextEditingController();
@@ -26,8 +24,19 @@ class _SignUpState extends State<SignUp>{
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
-          
-          padding: EdgeInsets.only(left: 16,right: 16),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(6),
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [
+                Color(0xff00796b),
+                Color(0xff00897b),
+                Color(0xff009688),
+              ],
+            ),
+          ),
+          padding: EdgeInsets.only(left: 16, right: 16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,21 +44,37 @@ class _SignUpState extends State<SignUp>{
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  SizedBox(height: 50,),
-                  Text("สร้างบัญชีผู้ใช้ใหม่",style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold, color: Colors.white),),
-                  SizedBox(height: 6,),
-                  Text("โดยการใช้อีเมลล์ของคุณ",style: TextStyle(fontSize: 20,color: Colors.white),),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  Text(
+                    "สร้างบัญชีผู้ใช้ใหม่",
+                    style: TextStyle(
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Text(
+                    "โดยการใช้อีเมลล์ของคุณ",
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
                 ],
               ),
               Column(
                 children: <Widget>[
                   Container(
-                    color:  Color(0xFFFFFFFf),
+                    color: Color(0xFFFFFFFf),
                     child: TextField(
                       controller: emailController,
                       decoration: InputDecoration(
                         labelText: "อีเมลล์",
-                        labelStyle: TextStyle(fontSize: 20,color: Colors.grey.shade400,fontWeight: FontWeight.w600),
+                        labelStyle: TextStyle(
+                            fontSize: 20,
+                            color: Colors.grey.shade400,
+                            fontWeight: FontWeight.w600),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(color: Colors.grey.shade300),
@@ -62,15 +87,19 @@ class _SignUpState extends State<SignUp>{
                       ),
                     ),
                   ),
-                  SizedBox(height: 16,),
+                  SizedBox(
+                    height: 16,
+                  ),
                   Container(
-              color:  Color(0xFFFFFFFf),
-
+                    color: Color(0xFFFFFFFf),
                     child: TextField(
                       controller: passwordController,
                       decoration: InputDecoration(
                         labelText: "รหัสผ่าน",
-                        labelStyle: TextStyle(fontSize: 20,color: Colors.grey.shade400,fontWeight: FontWeight.w600),
+                        labelStyle: TextStyle(
+                            fontSize: 20,
+                            color: Colors.grey.shade400,
+                            fontWeight: FontWeight.w600),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(color: Colors.grey.shade300),
@@ -83,16 +112,20 @@ class _SignUpState extends State<SignUp>{
                       ),
                     ),
                   ),
-                  SizedBox(height: 16,),
+                  SizedBox(
+                    height: 16,
+                  ),
                   Container(
-                  color:  Color(0xFFFFFFFf),
-
+                    color: Color(0xFFFFFFFf),
                     child: TextField(
                       controller: confirmController,
                       obscureText: true,
                       decoration: InputDecoration(
                         labelText: "กรอกรหัสผ่านอีกครั้ง",
-                        labelStyle: TextStyle(fontSize: 20,color: Colors.grey.shade400,fontWeight: FontWeight.w600),
+                        labelStyle: TextStyle(
+                            fontSize: 20,
+                            color: Colors.grey.shade400,
+                            fontWeight: FontWeight.w600),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(color: Colors.grey.shade300),
@@ -105,11 +138,13 @@ class _SignUpState extends State<SignUp>{
                       ),
                     ),
                   ),
-                  SizedBox(height: 30,),
+                  SizedBox(
+                    height: 30,
+                  ),
                   Container(
                     height: 50,
                     child: FlatButton(
-                      onPressed: (){
+                      onPressed: () {
                         signUp();
                       },
                       padding: EdgeInsets.all(0),
@@ -117,18 +152,27 @@ class _SignUpState extends State<SignUp>{
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: Ink(
-                      
                         child: Container(
                           alignment: Alignment.center,
-                          constraints: BoxConstraints(minHeight: 50,maxWidth: double.infinity),
-                          child: Text("สมัครสมาชิก",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),textAlign: TextAlign.center,),
+                          constraints: BoxConstraints(
+                              minHeight: 50, maxWidth: double.infinity),
+                          child: Text(
+                            "สมัครสมาชิก",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 16,),
-                 
-                  SizedBox(height: 30,),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
                 ],
               ),
               Padding(
@@ -136,12 +180,22 @@ class _SignUpState extends State<SignUp>{
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text("เป็นสมาชิกอยู่แล้ว?",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                    Text(
+                      "เป็นสมาชิกอยู่แล้ว?",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Navigator.pop(context);
                       },
-                      child: Text("เข้าสู่ระบบ",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),),
+                      child: Text(
+                        "เข้าสู่ระบบ",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
                     )
                   ],
                 ),
@@ -153,7 +207,7 @@ class _SignUpState extends State<SignUp>{
     );
   }
 
-signUp() {
+  signUp() {
     String email = emailController.text.trim();
     String password = passwordController.text.trim();
     String confirmPassword = confirmController.text.trim();
@@ -167,12 +221,10 @@ signUp() {
             MaterialPageRoute(builder: (context) => HomePage(user)),
             ModalRoute.withName('/'));
       }).catchError((error) {
-         print(error.message);
+        print(error.message);
       });
     } else {
       print("Password and Confirm-password is not match.");
     }
   }
-
-
 }
