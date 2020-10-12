@@ -27,6 +27,7 @@ class _LoginPageState extends State<LoginPage>{
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+  bool _validate = false;
 
 
 @override
@@ -82,7 +83,9 @@ class _LoginPageState extends State<LoginPage>{
                       decoration: InputDecoration(
                         
                         labelText: "อีเมลล์",
-                        labelStyle: TextStyle(fontSize: 20,color: Colors.grey),
+                        labelStyle: TextStyle(fontSize: 15,color: Colors.grey),
+                        errorText:_validate ? 'กรุณากรอกข้อมูล' : null ,
+
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(
@@ -107,6 +110,7 @@ class _LoginPageState extends State<LoginPage>{
                       decoration: InputDecoration(
                         labelText: "รหัสผ่าน",
                         labelStyle: TextStyle(fontSize: 20,color: Colors.grey),
+                        errorText:_validate ? 'กรุณากรอกข้อมูล' : null ,
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(
@@ -143,7 +147,9 @@ class _LoginPageState extends State<LoginPage>{
                     width: double.infinity,
                     child: FlatButton(
                       onPressed: (){
-                        signIn();
+                     
+                           signIn();
+                        
                       },
                       padding: EdgeInsets.all(0),
                       child: Ink(

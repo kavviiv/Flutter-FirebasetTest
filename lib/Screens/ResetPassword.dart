@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'SignIn.dart';
+
 //import 'package:myown/Screens/SignIn.dart';
 
 
@@ -66,6 +66,12 @@ class _ResetPageState extends State<ResetPage>{
                   Text("ลืมรหัสผ่าน?",style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold),),
                   SizedBox(height: 6,),
                   Text("กรุณากรอกอีเมลล์สำหรับการตั้งรหัสผ่านใหม่",style: TextStyle(fontSize: 20,color: Colors.white),),
+                ],
+              ),
+                 Column(              
+                children: <Widget>[
+                  SizedBox(height: 50,),
+                  //Image.asset('images/password.png'),
                 ],
               ),
               Column(
